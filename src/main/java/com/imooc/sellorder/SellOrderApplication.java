@@ -7,7 +7,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
-@EnableEurekaClient
+@EnableDiscoveryClient
 @MapperScan(basePackages = {"com.imooc.sellorder.mapper"})
 public class SellOrderApplication {
 
