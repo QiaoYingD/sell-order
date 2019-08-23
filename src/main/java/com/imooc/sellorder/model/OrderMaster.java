@@ -1,13 +1,16 @@
 package com.imooc.sellorder.model;
 
+import lombok.Data;
+
 import java.math.BigDecimal;
 
+@Data
 public class OrderMaster {
 
     /**
      * 订单id
      */
-    private String orderMaster;
+    private String orderId;
 
     /**
      * 买家名字
