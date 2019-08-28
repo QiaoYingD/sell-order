@@ -44,7 +44,7 @@ public class SerialNumber {
         synchronized (SerialNumber.class) {
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-ddHHmmss");
             String formatDate = format.format(new Date());
-            String newDate = formatDate.substring(0, 8);
+            String newDate = formatDate.substring(0, 10);
             if (newDate.equals(newDate)) {
                 if (DATE_NUMBER < 9999) {
                     DATE_NUMBER++;

@@ -3,6 +3,10 @@
 <mapper namespace="com.imooc.sellorder.mapper.OrderDetailMapper">
 
 
+    <!-- 增加方法-->
+    <insert id="addOrderDetail"  useGeneratedKeys="true" keyProperty="id">
+		insert into order_detail (detail_id,order_id,product_id,product_name,product_price,product_quantity,product_icon) values (#{detailId},#{orderId},#{productId},#{productName},#{productPrice},#{productQuantity},#{productIcon})
+	</insert>
 
 
 </mapper>

@@ -26,7 +26,7 @@ public class OrderFromToOrderDto {
         orderDto.setBuyerPhone(orderFrom.getPhone());
         List<OrderDetail> orderDetails = new ArrayList<>();
         try {
-            orderDetails = gson.fromJson(orderFrom.getItems(), new TypeToken<OrderDetail>() {
+            orderDetails = gson.fromJson(orderFrom.getItems(), new TypeToken<List<OrderDetail>>() {
             }.getType());
         } catch (JsonSyntaxException e) {
             log.error("【json转换】错误，String={}", orderFrom.getItems());

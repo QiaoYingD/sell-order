@@ -5,6 +5,6 @@ import com.imooc.sellorder.dto.OrderDto;
 public interface OrderMasterService {
 
 
-    void create(OrderDto orderDto);
+    String create(OrderDto orderDto);
 
 }

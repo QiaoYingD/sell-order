@@ -5,7 +5,7 @@
 
     <!-- 增加方法-->
     <insert id="insert"  useGeneratedKeys="true" keyProperty="id">
-		insert into order_master (order_id,buyer_name,buyer_phone,buyer_address,buyer_openid,order_amount,order_status,pay_status) values (#{orderId},#{buyerName},#{buyerPhone},#{buyerAddress},#{buyerOpenid},#{orderAmount},#{orderStatus},#{payStatus})
+		insert into order_master (order_id,buyer_name,buyer_phone,buyer_address,buyer_openid,order_amount,order_status,pay_status) values (#{orderId},#{buyerName},#{buyerPhone},#{buyerAddress},#{buyerOpenId},#{orderAmount},#{orderStatus},#{payStatus})
 	</insert>
 
 </mapper>

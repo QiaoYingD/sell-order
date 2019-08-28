@@ -6,10 +6,12 @@ import com.imooc.sellorder.enums.ResultEnum;
 import com.imooc.sellorder.execption.OrderExecption;
 import com.imooc.sellorder.form.OrderFrom;
 import com.imooc.sellorder.service.OrderMasterService;
+import com.imooc.sellorder.utils.ResultUtils;
 import com.imooc.sellorder.vo.ResultVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.CollectionUtils;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -45,9 +47,8 @@ public class OrderController {
             log.error("【创建订单】购物车为空");
             throw new OrderExecption(ResultEnum.CARY_ERROR);
         }
-        orderMasterService.create(orderDto);
-        return null;
+        String orderId = orderMasterService.create(orderDto);
+        return ResultUtils.success(orderId);
     }
-
 
 }
