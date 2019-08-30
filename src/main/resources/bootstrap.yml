@@ -7,6 +7,10 @@ spring:
         service-id: CONFIG
         enabled: true
       profile: dev
+    stream:
+      bindings:
+        myMessage:
+          group: order
 eureka:
   client:
     service-url:
