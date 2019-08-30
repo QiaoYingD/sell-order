@@ -11,15 +11,15 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class StreamReceiver {
 
-    @StreamListener("myMessageOut")
+    @StreamListener(StreamClient.OUT)
     public void process(String message) {
-        log.info("StreamReceiver: {}", message);
+        log.info("StreamReceiver OUT: {}", message);
     }
 
 
-//    @StreamListener("myMessageOut")
-//    public void process(CartDto message) {
-//        log.info("StreamReceiver: {}", message);
-//    }
+    @StreamListener(StreamClient.OUT1)
+    public void processCartDto(CartDto message) {
+        log.info("StreamReceiver OUT1: {}", message);
+    }
 
 }

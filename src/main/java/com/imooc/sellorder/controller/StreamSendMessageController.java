@@ -30,12 +30,12 @@ public class StreamSendMessageController {
     /**
      * 通过stream注解发送mq消息
      */
-//    @GetMapping("/sendMessage")
-//    public void sendMessage() {
-//        CartDto cartDto = new CartDto();
-//        cartDto.setProductId("111");
-//        streamClient.output().send(MessageBuilder.withPayload(cartDto).build());
-//    }
+    @GetMapping("/sendMessageCartDto")
+    public void sendMessageCartDto() {
+        CartDto cartDto = new CartDto();
+        cartDto.setProductId("111");
+        streamClient.output1().send(MessageBuilder.withPayload(cartDto).build());
+    }
 
 
 }
