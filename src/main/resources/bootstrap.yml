@@ -15,3 +15,7 @@ eureka:
   client:
     service-url:
       defaultZone: http://192.168.56.131:8761/eureka/
+#负载均衡 ribbon 默认轮循，改为随机
+produce:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule

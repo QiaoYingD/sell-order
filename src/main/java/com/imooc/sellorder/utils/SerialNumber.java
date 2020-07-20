@@ -4,6 +4,9 @@ import java.util.Date;
 
 import java.text.SimpleDateFormat;
 
+/**
+ * 单例模式生成唯一主键
+ */
 public class SerialNumber {
 
     private static volatile SerialNumber serialNumber;
