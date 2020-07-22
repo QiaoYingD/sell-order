@@ -20,13 +20,17 @@ public class ProductReceiver {
     @Resource
     private StringRedisTemplate stringRedisTemplate;
 
-
+    /**
+     * rabbit 接受消息
+     * @param message
+     */
     @RabbitListener(queuesToDeclare = @Queue("productInfo"))
     public void process(String message) {
 
         List<ProductInfo> productInfoList = (List<ProductInfo>) JsonUtil.fromJson(message, new TypeReference<List<ProductInfo>>() {
         });
         for (ProductInfo productInfo : productInfoList) {
+            //存到redis中
             stringRedisTemplate.opsForValue().set(String.format(PRODUCT_STOCK_TEMPLATE, productInfo.getProductId()), String.valueOf(productInfo.getProductStock()));
         }
 

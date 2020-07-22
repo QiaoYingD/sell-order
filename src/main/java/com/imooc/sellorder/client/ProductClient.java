@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
-@FeignClient(name = "product")
+@FeignClient(name = "product", fallback = ProductClient.ProductClientFallBack.class)
 @Component
 public interface ProductClient {
 
@@ -19,4 +19,21 @@ public interface ProductClient {
 
     @PostMapping("/product/decreaseStock")
     void decreaseStock(@RequestBody List<CartDto> cartDtoList);
+
+
+    @Component
+    public static class ProductClientFallBack implements ProductClient {
+
+        @Override
+        public List<ProductInfo> getProductForOrder(List<String> productId) {
+            return null;
+        }
+
+        @Override
+        public void decreaseStock(List<CartDto> cartDtoList) {
+
+        }
+    }
+
+
 }
